@@ -57,6 +57,14 @@ const whichTypeOf = () => {
 // 5. What is the difference btw let and var?
 /////////////////////////////////////////////////////////////
 
+/*
+1. Var is there in JS from the beginning. Let was introduced in 2015 in /ES6
+2. Let has scope in the block scope, which means that it will die at the end of a block (e.g if statement)
+    var has global scope / functon scope It will die at the end of the function 
+3. vars get hoisted on top of the function that is defined (defined in top of the function idependently of when you declare them)
+
+*/
+
 /////////////////////////////////////////////////////////////
 // 6. What is prototype in javascript?
 /////////////////////////////////////////////////////////////
@@ -100,6 +108,14 @@ const whichTypeOf = () => {
 /////////////////////////////////////////////////////////////
 // 16. differences between == and ===?
 /////////////////////////////////////////////////////////////
+
+/*
+Both are comparison operators
+== -> Compares only value. In order to compare It will make both types equal
+ ( the one on the right side to the one on the left side) like a casting
+
+=== -> Compares value and type as well
+*/
 
 /////////////////////////////////////////////////////////////
 // 17. What is variable hoisting in JS?
@@ -258,21 +274,29 @@ const deletionArray= () => {
 /////////////////////////////////////////////////////////////
 // 40. difference between let and const
 /////////////////////////////////////////////////////////////
+
 /*
-let: creates a variable (the scope is a bit different) that can change
+Both are used to 
+
+
+let: creates a variable (the scope is a bit different) that can change.
+It will allow you to change type as well
 
 const: creates a const which makes clear that we don't plan on changing it
+const c; -> It will initialize as undefined
+c.push(3) -> undefined to 3, error
 
+you can't reasing the object or array
 
 */
 
 
 /////////////////////////////////////////////////////////////
-// 40. What are the primitive types in JS and the mutables (and inmutables) reference
+// 41. What are the primitive types in JS and the mutables (and inmutables) reference
 //////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////
-// 40. How arrow functions work and why to use them
+// 42. How arrow functions work and why to use them
 // https://academind.com/tutorials/this-keyword-function-references/
 /////////////////////////////////////////////////////////////
 
@@ -323,11 +347,35 @@ const arrowFunction1Argument = a => 1+1;
 const arrowFunctionNoArguments = () => console.log("arrow function with no arguments");
 
 
+/*
+
+Allows to refer to the this of the object surrounding it, otherwise it would be assigned to the window object
+
+
+*/
+
+const arrowFunctionThisExplanation = () => {
+    const profile = {
+        firstName: '',
+        lastName: '',
+        setName: function(name) {
+            let splitName = (n) => {
+                let nameArray = n.split(' ');
+                this.firstName = nameArray[0];
+                this.lastName = nameArray[1];
+            }
+            splitName(name);
+        }
+    }
+    profile.setName('John Deere');
+    console.log(profile.lastName);
+}
+
 ////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////
-// 41. What is an data structe called JS Objects
+// 43. What is an data structe called JS Objects
 /////////////////////////////////////////////////////////////
 
 // objects allow to gather data together
@@ -344,7 +392,7 @@ const person = {
 };
 
 /////////////////////////////////////////////////////////////
-// 40. Arrays how they work
+// 44. Arrays how they work
 /////////////////////////////////////////////////////////////
 /*
 Arrays are the other kind of data structure
@@ -360,7 +408,7 @@ const ArrayFunction = () => {
         
 
 /////////////////////////////////////////////////////////////
-// 40. How does the map function work
+// 45. How does the map function work
 /////////////////////////////////////////////////////////////
 // The map function applies a function to each element of the array
 // Returns a new Array reference
@@ -374,7 +422,7 @@ const mapFunction = () => {
 }
 
 /////////////////////////////////////////////////////////////
-// 40. difference between let and const
+// 46. difference between let and const
 /////////////////////////////////////////////////////////////
 /* 
 reference types only stores an addres, so as long as you don't change
@@ -382,11 +430,11 @@ the reference to the Object, what it is pointing to can be change even
 when when it is declared as a const  */
 
 /////////////////////////////////////////////////////////////
-// 40. How does the slice function work
+// 47. How does the slice function work
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. How does the Destructuring works
+// 48. How does the Destructuring works
 /////////////////////////////////////////////////////////////
 
 /*
@@ -409,7 +457,7 @@ const destructuring = () => {
 
 
 /////////////////////////////////////////////////////////////
-// 40. What is asyncronhous code
+// 49. What is asyncronhous code
 /////////////////////////////////////////////////////////////
 /*
 callback functions, executes the function and after that 
@@ -427,7 +475,7 @@ asynchronousCode = () => {
         }, 1);
 }
 /////////////////////////////////////////////////////////////
-// 40. What are promises
+// 50. What are promises
 /////////////////////////////////////////////////////////////
 /*
 */
@@ -438,15 +486,15 @@ const fetchData = callback => {
     });
 }
 /////////////////////////////////////////////////////////////
-// 40. How does the splice function work
+// 51. How does the splice function work
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 52. How does the find function work?
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. Next generation JavaScript Classes?
+// 53. Next generation JavaScript Classes?
 
 /*
 Classes are blueprints for JavaScript objects
@@ -484,48 +532,54 @@ function classesq() {
 }
 
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 54. How does the find function work?
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. How does the findIndex function work?
+// 55. How does the findIndex function work?
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. How does the reduce function work?
+// 56. How does the reduce function work?
 /////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////
-// 40. How does the concat function work?
+// 57. How does the concat function work?
 /////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////
-// 40. How does the splice function work?
+// 58. How does the splice function work?
 /////////////////////////////////////////////////////////////
 
 
+/////////////////////////////////////////////////////////////
+// 59. Difference between null and undefined?
+/////////////////////////////////////////////////////////////
+/*
+Both represents empty value
+undefined is like a placeholder, null you will have to place it manually
+typeof(null) => object
+typeof(undefined) => undefined
+*/
 
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 60. How does the find function work?
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 61. How does the find function work?
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 62. How does the find function work?
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 63. How does the find function work?
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 64. How does the find function work?
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-// 40. How does the find function work?
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-// 40. How does the find function work?
+// 65. How does the find function work?
 /////////////////////////////////////////////////////////////
 
 
@@ -548,4 +602,4 @@ function classesq() {
 
 // Insert the desire function to execute here
 //::::::::::::::::::::::::::::::::::::::::::::
-classesq();
+arrowFunctionThisExplanation();
