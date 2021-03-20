@@ -804,6 +804,16 @@ typeof(undefined) => undefined
 // 117. Factorial using recursivity?
 /////////////////////////////////////////////////////////////
 
+const factorial = (n) => {
+    //Base case
+    if (n < 1) {
+        return 1
+        // Complex case
+    } else {
+        return n * factorial(n-1)
+    }
+}
+
 ////////////////////////////////////////////////////////////
 // 118. How are event handlers utilized in JS?
 /////////////////////////////////////////////////////////////
@@ -848,4 +858,4 @@ typeof(undefined) => undefined
 
 // Insert the desire function to execute here
 //::::::::::::::::::::::::::::::::::::::::::::
-arrowFunctionThisExplanation();
+console.log(factorial(5));
